@@ -6,7 +6,15 @@ angular.module('fsappApp')
 
     $scope.messages = $firebase(ref);
 
+    $scope.messageForm = {};
+
     $scope.sendMessage = function () {
+
+      if ($scope.messageForm.$invalid) {
+        alert('Form invalid!');
+        return;
+      }
+
       $scope.messages.$add({
         username: $scope.user.username,
         body: $scope.newMessage
@@ -17,5 +25,5 @@ angular.module('fsappApp')
     $scope.messageList = function () {
       return $scope.messages;
     };
-    
+
   });

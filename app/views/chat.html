@@ -1,13 +1,13 @@
 <h1>FullStack Chat</h1>
-<input ng-model="user.username" placeholder="Enter a username" />
+<form ng-submit="sendMessage()" name="messageForm" novalidate>
+  <p class="bg-danger" ng-show="messageForm.$invalid">You must fill out all the form fields!</p>
+  <input ng-model="messageForm.user.username" placeholder="Enter a username" required />
 
-<div class="chat-box">
-  <ul>
-    <li ng-repeat="message in messages" ng-hide="message.hidden">{{message.username}} said: {{message.body}}</li>
-  </ul>
-</div>
-<input ng-model="newMessage" placeholder="Write a message..." />
-<button type="button" class="btn btn-primary" ng-click="sendMessage()">Send Message</button>
-
-
-{{messageList()}}
+  <div class="chat-box">
+    <ul>
+      <li ng-repeat="message in messages" ng-hide="message.hidden">{{message.username}} said: {{message.body}}</li>
+    </ul>
+  </div>
+  <input ng-model="messageForm.newMessage" placeholder="Write a message..." required />
+  <button type="submit" class="btn btn-primary">Send Message</button>
+</form>
