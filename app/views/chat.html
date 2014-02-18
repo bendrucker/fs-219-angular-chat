@@ -1,0 +1,10 @@
+<h1>FullStack Chat</h1>
+<input ng-model="user.username" placeholder="Enter a username" />
+
+<div class="chat-box">
+  <ul>
+    <li ng-repeat="message in messages">{{message.username}} said: {{message.body}}</li>
+  </ul>
+</div>
+<input ng-model="newMessage" placeholder="Write a message..." />
+<button type="button" class="btn btn-primary" ng-click="sendMessage()">Send Message</button>
