@@ -1,7 +1,8 @@
 'use strict';
 
 angular.module('fsappApp', [
-  'ngRoute'
+  'ngRoute',
+  'firebase'
 ])
   .config(function ($routeProvider) {
     $routeProvider

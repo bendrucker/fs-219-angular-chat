@@ -3,8 +3,11 @@
 
 <div class="chat-box">
   <ul>
-    <li ng-repeat="message in messages">{{message.username}} said: {{message.body}}</li>
+    <li ng-repeat="message in messages" ng-hide="message.hidden">{{message.username}} said: {{message.body}}</li>
   </ul>
 </div>
 <input ng-model="newMessage" placeholder="Write a message..." />
 <button type="button" class="btn btn-primary" ng-click="sendMessage()">Send Message</button>
+
+
+{{messageList()}}
